@@ -8,17 +8,9 @@ td, th {
   padding: 5px;
 }
 
-header {
-  background-color: salmon;
-}
+
 
 .CSD-Header {
-  text-align: center;
-}
-
-.links {
-  border: solid 3px black;
-  font-size: 30px;
   text-align: center;
 }
 
@@ -43,4 +35,36 @@ p {
 
 iframe {
   display: inline-block
+}
+
+header {
+  padding: 20px;
+}
+
+.header-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header-content img {
+  width: 100px;
+}
+
+.store-name {
+  margin-right: 30%;
+}
+
+.links a {
+  margin-right: 10px;
+  text-decoration: none;
+  color: #333;
+}
+
+
+footer {
+  border: 3px solid black;
+  text-align: center;
+  background-color: salmon;
+  margin: 15px auto;
 }
