@@ -7,3 +7,40 @@ td, th {
   border: solid 1px black;
   padding: 5px;
 }
+
+header {
+  background-color: salmon;
+}
+
+.CSD-Header {
+  text-align: center;
+}
+
+.links {
+  border: solid 3px black;
+  font-size: 30px;
+  text-align: center;
+}
+
+nav a {
+  text-decoration: none;
+  color: black;
+}
+
+nav a:hover {
+  color: black;
+  text-decoration: none;
+}
+
+.mapLocations {
+  text-align: center;
+  background-color: salmon;
+}
+
+p {
+  display: inline-block
+}
+
+iframe {
+  display: inline-block
+}
