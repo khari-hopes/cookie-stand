@@ -36,6 +36,7 @@ Store.prototype.randomizer = function () {
       Math.random() * (this.maxCust - this.minCust) +
       this.minCust
     );
+    
     this.customersPerHour.push(ranCustNum);
   }
   return this.customersPerHour;
@@ -54,16 +55,16 @@ Store.prototype.randomCookie = function () {
 };
 
 const locations = [
-  new Store('Seattle: ', 23, 65, 6.3),
-  new Store('Tokyo: ', 3, 24, 1.2),
-  new Store('Dubai: ', 11, 38, 3.7),
-  new Store('Paris: ', 20, 38, 2.3),
-  new Store('Lima: ', 2, 16, 4.6),
+  new Store('Seattle', 23, 65, 6.3),
+  new Store('Tokyo', 3, 24, 1.2),
+  new Store('Dubai', 11, 38, 3.7),
+  new Store('Paris', 20, 38, 2.3),
+  new Store('Lima', 2, 16, 4.6),
 ];
 
 const tableContainer = document.getElementById('cities');
 
-function headerCreator() {
+function tableHeader() {
   const blankElement = document.createElement('th');
   blankElement.textContent = 'Location';
   tableContainer.appendChild(blankElement);
@@ -77,9 +78,9 @@ function headerCreator() {
   tableContainer.appendChild(SalesTotal);
 }
 
-headerCreator();
+tableHeader();
 
-function bodyCreator() {
+function tableBody() {
   for (let i = 0; i < locations.length; i++) {
     locations[i].randomizer();
     locations[i].randomCookie();
@@ -87,14 +88,14 @@ function bodyCreator() {
   }
 }
 
-bodyCreator();
+tableBody();
 
-function footerCreator() {
+function tableFooter() {
   const hrTotalCont = document.createElement('tfoot');
   tableContainer.appendChild(hrTotalCont);
 
   const totalsCell = document.createElement('td');
-  totalsCell.textContent = 'Totals:';
+  totalsCell.textContent = 'Totals';
   hrTotalCont.appendChild(totalsCell);
 
   let hourTotals = [];
@@ -124,4 +125,4 @@ function footerCreator() {
   console.log(hourTotals);
 }
 
-footerCreator();
+tableFooter();
