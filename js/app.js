@@ -36,7 +36,7 @@ Store.prototype.randomizer = function () {
       Math.random() * (this.maxCust - this.minCust) +
       this.minCust
     );
-    
+
     this.customersPerHour.push(ranCustNum);
   }
   return this.customersPerHour;
@@ -91,12 +91,12 @@ function tableBody() {
 tableBody();
 
 function tableFooter() {
-  const hrTotalCont = document.createElement('tfoot');
-  tableContainer.appendChild(hrTotalCont);
+  const hourTotalCont = document.createElement('tfoot');
+  tableContainer.appendChild(hourTotalCont);
 
   const totalsCell = document.createElement('td');
   totalsCell.textContent = 'Totals';
-  hrTotalCont.appendChild(totalsCell);
+  hourTotalCont.appendChild(totalsCell);
 
   let hourTotals = [];
   let grandTotal = 0;
@@ -115,12 +115,12 @@ function tableFooter() {
   for (let i = 0; i < storeHours.length; i++) {
     const footerInfo = document.createElement('td');
     footerInfo.textContent = hourTotals[i];
-    hrTotalCont.appendChild(footerInfo);
+    hourTotalCont.appendChild(footerInfo);
   }
 
   const totalCell = document.createElement('td');
   totalCell.textContent = grandTotal;
-  hrTotalCont.appendChild(totalCell);
+  hourTotalCont.appendChild(totalCell);
 
   console.log(hourTotals);
 }
