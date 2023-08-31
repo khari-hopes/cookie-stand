@@ -126,3 +126,8 @@ function tableFooter() {
 }
 
 tableFooter();
+
+
+handleRenderRegisterForm(event){
+  event.preventDefault();
+}
