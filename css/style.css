@@ -62,9 +62,54 @@ header {
 }
 
 
+
 footer {
   border: 3px solid black;
   text-align: center;
   background-color: salmon;
-  margin: 15px auto;
+
+  padding: 15px;
 }
+
+#cities {
+  border: 3px solid black;
+}
+
+.locations {
+  display: flex;
+  justify-content: space-between;
+}
+
+.seattlesection,
+.tokyosection,
+.dubaisection,
+.parissection,
+.limasection {
+  margin: 15px;
+  padding: 15px;
+  border: 2px solid 	#C0C0C0;
+  box-sizing: border-box;
+}
+
+
+.seattlesection {
+  margin: 15px;
+  padding: 15px;
+  border: 2px solid #006400;
+  box-sizing: border-box;
+}
+.tokyosection,
+.dubaisection,
+.parissection,
+.limasection {
+  margin: 15px;
+  padding: 15px;
+  border: 2px solid 	#FA8072;
+  box-sizing: border-box;
+}
+
+
+.button-section {
+  text-align: center;
+}
+
