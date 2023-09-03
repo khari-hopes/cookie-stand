@@ -113,3 +113,6 @@ footer {
   text-align: center;
 }
 
+fieldset * {
+  display: block;
+}

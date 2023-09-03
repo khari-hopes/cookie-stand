@@ -125,4 +125,30 @@ function tableFooter() {
   console.log(hourTotals);
 }
 
+const newLocationform = document.getElementById("newLocation-form");
+newLocationform.addEventListener("submit", handleSubmitOrder);
+
+function handleSubmitOrder(event) {
+  event.preventDefault();
+
+  const nameOfCity = event.target.nameOfCity.value;
+  const minCustNum = parseInt(event.target.minCustNum.value);
+  const maxCustNum = parseInt(event.target.maxCustNum.value);
+  const avgCustNum = parseInt(event.target.avgCustNum.value);
+
+
+  const newLocation = new Store(nameOfCity, minCustNum, maxCustNum, avgCustNum);
+  locations.push(newLocation);
+
+  
+  event.target.reset();
+
+
+  newLocation.randomizer();
+  newLocation.randomCookie();
+  newLocation.render();
+}
+
+
+
 tableFooter();
