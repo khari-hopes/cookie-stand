@@ -2,6 +2,10 @@ const storeHours = ['6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '
 
 const hoursContainerElem = document.getElementById('hours-section');
 
+// these are apart of global state
+let hourTotals = [];
+let grandTotal = 0;
+
 function Store(name, minCust, maxCust, avgCookie) {
   this.name = name;
   this.minCust = minCust;
@@ -98,8 +102,8 @@ function tableFooter() {
   totalsCell.textContent = 'Totals';
   hourTotalCont.appendChild(totalsCell);
 
-  let hourTotals = [];
-  let grandTotal = 0;
+//  let hourTotals = [];
+//  let grandTotal = 0;
 
   for (let i = 0; i < storeHours.length; i++) {
     let hourTotal = 0;
@@ -128,6 +132,7 @@ function tableFooter() {
 const newLocationform = document.getElementById("newLocation-form");
 newLocationform.addEventListener("submit", handleSubmitOrder);
 
+// this function updates total footer row
 function handleSubmitOrder(event) {
   event.preventDefault();
 
@@ -139,7 +144,7 @@ function handleSubmitOrder(event) {
 
   const newLocation = new Store(nameOfCity, minCustNum, maxCustNum, avgCustNum);
   locations.push(newLocation);
-
+console.log(newLocation);
   
   event.target.reset();
 
@@ -147,8 +152,25 @@ function handleSubmitOrder(event) {
   newLocation.randomizer();
   newLocation.randomCookie();
   newLocation.render();
-}
+  //let currentfooter = document.getElementsByTagName('tfoot');
+  // console.log(currentfooter);
+  //console.log(currentfooter.children);
+  console.log(hourTotals);
+  console.log(grandTotal);
+  for(let i = 0;i < hourTotals.length; i++){
+    hourTotals[i] += newLocation.cookiesPerHour[i];
+    grandTotal += newLocation.cookiesPerHour[i];
+  };
+console.log(hourTotals);
+let oldFooter = document.getElementsByTagName('tfoot')[0]; 
+console.log(oldFooter);
 
+
+if (oldFooter) {
+  oldFooter.parentNode.removeChild(oldFooter);
+}
+tableFooter();
+}
 
 
 tableFooter();
